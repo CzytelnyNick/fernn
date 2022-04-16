@@ -5,7 +5,6 @@ export class Subscription{
     @PrimaryGeneratedColumn()
     public _ID: number
 
-    // klucz - company
     @Column()
     public company: number
 

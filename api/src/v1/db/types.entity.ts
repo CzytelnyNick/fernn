@@ -8,9 +8,8 @@ export class Types{
     public _ID: number
 
     @Column()
-    public mainNamevarchar: string
-
-    // klucz - dictionary
+    public dictionaryLocalization: number
+    
     @Column()
-    public dictionaryLocalization : number
+    public value : number
 }

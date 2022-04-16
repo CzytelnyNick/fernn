@@ -5,10 +5,18 @@ export class Style{
     @PrimaryGeneratedColumn()
     public _ID: number
 
+    @Column()
+    public dictionaryLocalizationName: number
 
-    // dopisz debilu
+    @Column()
+    public dictionaryLocalizationDescription: number
 
-    // // klucz - company
-    // @Column()
-    // public company: number
+    @Column()
+    public preview: string
+
+    @Column()
+    public scssFile: string
+
+    @Column()
+    public cssFile: string
 }

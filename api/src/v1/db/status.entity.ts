@@ -6,10 +6,6 @@ export class Status{
     public _ID: number
 
     @Column()
-    public mainName: string
-
-    // klucz - dictionary
-    @Column()
     public dictionaryLocalization: number
     
     @Column()

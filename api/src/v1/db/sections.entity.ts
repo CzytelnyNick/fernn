@@ -5,7 +5,9 @@ export class Sections {
     @PrimaryGeneratedColumn()
     public _ID: number
 
-    // // popraw debilu
-    // @Column()
-    // public ss: string
+    @Column()
+    public name: string
+
+    @Column()
+    public company: number
 }

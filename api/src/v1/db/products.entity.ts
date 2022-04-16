@@ -5,7 +5,6 @@ export class Products{
     @PrimaryGeneratedColumn()
     public _ID: number
 
-    // klucz - manufacter
     @Column()
     public manufacturer	: number
 

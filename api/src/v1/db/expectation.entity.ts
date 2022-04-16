@@ -4,11 +4,10 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class Expection{
     @PrimaryGeneratedColumn()
     public _ID: number
-
-    @Column()
-    public mainName: string
-
-    // klucz - dictionary
+    
     @Column()
     public dictionaryLocalization: number
+
+    @Column()
+    public value: number
 }
