@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class history{
+export class History{
     @PrimaryGeneratedColumn()
     public _ID: number
 
@@ -14,6 +14,9 @@ export class history{
     @Column()
     public session: string
     
+    @Column()
+    public account: number
+
     @Column()
     public data: string
 }

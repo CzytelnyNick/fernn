@@ -1,29 +1,30 @@
-// import { Controller } from '@nestjs/common';
-
-// @Controller('auth')
-// export class AuthController {}
-
-
-
 import { AuthService } from './auth.service';
-import { Controller, Get, HttpStatus, Param, Post, Query } from '@nestjs/common';
+import { Controller, Get, Headers, HttpStatus, Param, Post, Query, Req } from '@nestjs/common';
 
 @Controller('v1/auth')
 export class AuthController { 
     constructor(private readonly authService: AuthService) {}
     
-    @Post('create/session')
-    async createSession(){
-        return JSON.stringify(await this.authService.createSession())
+    @Get('verify/:apiKey')
+    async verifyAPI(
+        @Param("apiKey") apiKey: string
+    ){
+        return JSON.stringify(await this.authService.verifyApi(apiKey))
     }
 
-    // @Get(':sessionID/login/:login')
-    // async getHello(
-    //     @Param("sessionID") sessionID, 
-    //     @Param("login") login, 
-    //     @Query("password") aa,  
-    //     @Res() res
-    // ) {
-    //     return res.status(HttpStatus.OK).json(this.authService.login(aa, login, sessionID))
-    // }
+    @Post('create/session')
+    async createSession( @Param() param: string, @Query() query: string, @Headers() headers: string ){
+        return await this.authService.checkAPI(
+            this.authService.createSession, 
+            { param: param, query: query, headers: headers }, false
+        )
+    }
+
+    @Post('login/:login')
+    async login( @Param() param: string, @Query() query: string, @Headers() headers: string ){
+        return await this.authService.checkAPI(
+            this.authService.login, 
+            { param: param, query: query, headers: headers }
+        )
+    }
 }
