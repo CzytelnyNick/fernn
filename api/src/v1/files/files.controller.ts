@@ -8,8 +8,9 @@ import { FilesService } from './files.service';
 export class FilesController {
     constructor(private readonly filesService: FilesService) {}
 
-    @Get('get/:folderName/:fileName')
+    @Get('get/:locationName/:folderName/:fileName')
     getFile(
+        @Param('locationName') locationName: string, 
         @Param('folderName') folderName: string, 
         @Param('fileName') fileName: string,
         @Response({ passthrough: true }) res
@@ -17,6 +18,6 @@ export class FilesController {
         res.set({
             'Content-Disposition': `attachment; filename="${fileName}"`,
         });
-        return this.filesService.getFile(folderName, fileName)
+        return this.filesService.getFile(locationName, folderName, fileName)
     }
 }

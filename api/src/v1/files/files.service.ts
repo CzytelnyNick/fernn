@@ -5,8 +5,9 @@ import { join } from 'path';
 @Injectable()
 export class FilesService {
    
-    getFile(folderName: string, fileName: string): StreamableFile {
-        const file = createReadStream(join(process.cwd(), `./files/${folderName}/${fileName}`));
+    getFile(locationName: string, folderName: string, fileName: string): StreamableFile {
+        console.log("dsfsdfsdf");
+        const file = createReadStream(join(process.cwd(), `./files/${locationName}/${folderName}/${fileName}`));
 
         return new StreamableFile(file);
     }
