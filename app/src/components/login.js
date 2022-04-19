@@ -14,10 +14,13 @@ export default class Login extends React.Component{
               PL: ["Witamy!", "Wpisz Email lub login", "Błędny login lub hasło", "Hasło", "Błędne hasło lub login", "Login", "Zapomniałeś hasła?", "Powrót"]
         }}
     }
+    
     render(){
         return (
           <div>
-          <img src="http://localhost:3000/v1/files/get/icons/icon.png" />
+            <input type={"text"} name="login" />
+            <input type={"text"} name="session" />
+          {/* <img src="http://localhost:3000/v1/files/get/icons/icon.png" /> */}
           </div>
         )
       }
