@@ -8,13 +8,14 @@ import { FilesService } from './files.service';
 export class FilesController {
     constructor(private readonly filesService: FilesService) {}
 
-    @Get('get/:locationName/:folderName/:fileName')
+    @Get('/:locationName/:folderName/:fileName')
     getFile(
         @Param('locationName') locationName: string, 
         @Param('folderName') folderName: string, 
         @Param('fileName') fileName: string,
         @Response({ passthrough: true }) res
     ): StreamableFile {
+        console.log(fileName);
         res.set({
             'Content-Disposition': `attachment; filename="${fileName}"`,
         });

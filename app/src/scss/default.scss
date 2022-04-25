@@ -146,3 +146,15 @@ body{
 //     z-index: 200;
 // }
 
+
+.card-header{
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+}
+.card-body{
+    background-color: var(--light-blue);
+}
+.list-group-item.active{
+    background-color: var(--dark-blue);
+    color: var(--light-gray);
+}
