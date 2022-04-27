@@ -34,6 +34,7 @@ export default class Facilities extends React.Component{
             this.setState({window: wind})
         })
         
+        this.changeScreen = this.changeScreen.bind(this)
         this.toogleLeftNav = this.toogleLeftNav.bind(this)
     }
 
@@ -61,8 +62,8 @@ export default class Facilities extends React.Component{
         })})})
     }
 
-    changeScreen(){
-
+    changeScreen(screen){
+        this.setState({actualScreen: screen})
     }
 
     async componentDidMount(){
@@ -71,14 +72,23 @@ export default class Facilities extends React.Component{
     render(){ 
         return (
             <div className="screen" >
-                <FacilitiesMainNav window={this.state.window} leftNav={this.state.leftNav} toogleLeftNav={this.toogleLeftNav.bind(this)} actualScreen={this.state.actualScreen} />
+                <FacilitiesMainNav 
+                    window={this.state.window} 
+                    leftNav={this.state.leftNav} 
+                    toogleLeftNav={this.toogleLeftNav.bind(this)} 
+                    changeScreen={this.changeScreen.bind(this)}
+                    actualScreen={this.state.actualScreen} 
+                />
 
                 <div className="rightPart" style={{
                     left: this.state.window.innerWidth<=990 ? "0px" : this.state.leftNav.width+"px", 
                     width: this.state.window.innerWidth<=990 ? "100%" : this.state.window.innerWidth-this.state.leftNav.width+"px", 
                     height: this.state.window.innerHeight-70+"px"}}>
 
-                    <CreateScreen getScreen={this.state.actualScreen } changeScreen={this.changeScreen}  />
+                    <CreateScreen 
+                        getScreen={this.state.actualScreen } 
+                        changeScreen={this.changeScreen.bind(this)}  
+                    />
                     
                 </div>
             </div>

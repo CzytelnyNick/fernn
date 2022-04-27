@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 export default function FacilitiesMainNav(props){
     const { t } = useTranslation();
-    console.log("pp",props);
     return <>
         <div className="leftPart d-none d-lg-block" style={{width: props.leftNav.width+"px"}}>
             <nav aria-expanded="false">
@@ -11,58 +10,58 @@ export default function FacilitiesMainNav(props){
                     opacity: 1-props.leftNav.opacity, 
                     display: (props.leftNav.opacity==1) ? "none" : "block"
                 }}>
-                    <div className={props.actualScreen == 0 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 0 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(0)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/home-50.png`} alt=""/>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 1 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 1 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(1)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/add-50.png`} alt=""/>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 3 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 3 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(3)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/data-sheet-50.png`} alt=""/>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 9 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 9 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(9)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/chart-50.png`} alt=""/>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 10 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 10 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(10)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/settings-50.png`} alt=""/>
                         </div>
                     </div>
                 </div>
                 <div className="fullNav" style={{opacity: props.leftNav.opacity}}>
-                    <div className={props.actualScreen == 0 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 0 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(0)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/home-50.png`} alt=""/>
                             <span className="itemContent">{t('HOME')}</span>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 1 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 1 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(1)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/add-50.png`} alt=""/>
                             <span className="itemContent">{t('ADD')}</span>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 3 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 3 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(3)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/data-sheet-50.png`} alt=""/>
                             <span className="itemContent">{t('COMPLAINTS')}</span>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 9 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 9 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(9)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/chart-50.png`} alt=""/>
                             <span className="itemContent">{t('STATISTICS')}</span>
                         </div>
                     </div>
-                    <div className={props.actualScreen == 10 ? "navItem active" : "navItem"}>
+                    <div className={props.actualScreen == 10 ? "navItem active" : "navItem"} onClick={() => props.changeScreen(10)}>
                         <div>
                             <img src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/settings-50.png`} alt=""/>
                             <span className="itemContent">{t('SETTINGS')}</span>
@@ -76,7 +75,6 @@ export default function FacilitiesMainNav(props){
                         style={{transform: `rotate(${props.leftNav.toogleRotate}deg)`}} 
                         src={`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/icons/circled-right-50.png`}
                     />
-
                 </div>
             </nav>
         </div>

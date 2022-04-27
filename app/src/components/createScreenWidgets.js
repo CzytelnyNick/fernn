@@ -10,6 +10,8 @@ export default class CreateScreen extends React.Component{
     constructor(props){
         super(props)
         this.state = {widgets: []}
+
+        this.getWidget = this.getWidget.bind(this)
     }
 
     async componentDidMount(){
@@ -96,7 +98,7 @@ export default class CreateScreen extends React.Component{
                 return <Messsages widget={widget} changeScreen={this.props.changeScreen} />
 
             default:
-                return (<div>5454556545555</div>)
+                return (<div>gtrtyrty</div>)
         }       
         
     }

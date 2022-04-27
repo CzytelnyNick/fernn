@@ -158,3 +158,12 @@ body{
     background-color: var(--dark-blue);
     color: var(--light-gray);
 }
+
+.messagesList{
+    ul li{
+        list-style-type: disc;
+    }
+    ol li{
+        list-style: number;
+    }
+}
