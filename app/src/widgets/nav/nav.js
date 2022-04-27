@@ -64,7 +64,7 @@ export default function Nav(props){
     return (
         <div className="card shadow col-11 mt-3 m-auto">
             <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold">dsfsdfsdfsdfsdfsd[066sdfsdf</h6>
+                <h6 className="m-0 font-weight-bold">{t('QUICK_NAV')}</h6>
             </div>
             <div className="card-body">
                 <div className="row m-auto">

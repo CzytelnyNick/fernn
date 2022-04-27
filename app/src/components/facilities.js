@@ -71,7 +71,7 @@ export default class Facilities extends React.Component{
     render(){ 
         return (
             <div className="screen" >
-                <FacilitiesMainNav window={this.state.window} leftNav={this.state.leftNav} toogleLeftNav={this.toogleLeftNav.bind(this)} />
+                <FacilitiesMainNav window={this.state.window} leftNav={this.state.leftNav} toogleLeftNav={this.toogleLeftNav.bind(this)} actualScreen={this.state.actualScreen} />
 
                 <div className="rightPart" style={{
                     left: this.state.window.innerWidth<=990 ? "0px" : this.state.leftNav.width+"px", 

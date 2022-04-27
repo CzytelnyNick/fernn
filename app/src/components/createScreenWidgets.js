@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 
 import Nav from "../widgets/nav/nav";
+import Messsage from "../widgets/other/message";
+import Messsages from "../widgets/other/messages";
 
 
 export default class CreateScreen extends React.Component{
@@ -11,8 +13,6 @@ export default class CreateScreen extends React.Component{
     }
 
     async componentDidMount(){
-        console.log(`${process.env.REACT_APP_FERNN_API_HOST}/v1/files/system/screens/screen${this.props.getScreen}.json`);
-        // console.log("upd");
         const headers = {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
@@ -24,10 +24,8 @@ export default class CreateScreen extends React.Component{
             withCredentials: false,
             headers: headers
         })
-        console.log("res", res);
 
         this.setState({widgets: await res.data})
-        console.log(res);
     }
 
     getWidget(widget, i){
@@ -90,6 +88,13 @@ export default class CreateScreen extends React.Component{
                 break;
             case 'settings/company/changePlan':
                 break;
+                
+            case 'other/message':
+                return <Messsage widget={widget} changeScreen={this.props.changeScreen} />
+                
+            case 'other/messages':
+                return <Messsages widget={widget} changeScreen={this.props.changeScreen} />
+
             default:
                 return (<div>5454556545555</div>)
         }       
@@ -97,20 +102,9 @@ export default class CreateScreen extends React.Component{
     }
     render(){
         try{
-            console.log("st", this.state.widgets.widgetsList);
-            // // this.state.widgets.map(() => {})
             return <div>{this.state.widgets.widgetsList.map((el, i) => this.getWidget(el, i))}</div>
-            // return <div></div>
         }catch(e){
-            console.log(e);
             return <h1>EU-08</h1>
-          }
-        // if(Array.isArray(this.state.widgets)){
-        //     
-        // }else{
-        //     try{
-        //     }catch(e){}
-        //     return <h1>EU-08</h1>
-        // // }
+        }
     }
 }

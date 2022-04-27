@@ -1,4 +1,5 @@
 {
+    "desc": "home",
     "widgetsList": [
         {
             "name": "nav/quickNav",
@@ -6,7 +7,7 @@
             "nameID": 100,
             "requiredContent": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]
         }, {
-            "name": "nav/quickNav",
+            "name": "other/messages",
             "width": 6,
             "nameID": 100,
             "requiredContent": [101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]
