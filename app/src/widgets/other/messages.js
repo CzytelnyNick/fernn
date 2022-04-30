@@ -1,8 +1,17 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 
 export default function Messsages(props){
     const { t } = useTranslation();
+
+    const [lastMessages, setLastMessages] = useState([])
+
+    useEffect(() => {
+        // axios.get(`${process.env.REACT_APP_FERNN_API_HOST}/v1/messages/`, { headers: {}, params: {props.props} })
+        //     .then((res) => { return res.data })
+        //     .finally((data) => {setLastMessages(data)})
+    })
 
     return (
         <div className="card shadow col-11 mt-3 m-auto messagesList">
@@ -16,9 +25,9 @@ export default function Messsages(props){
                     </div>
                     <div className='col-12 col-md-10 col-xl-11'>
                         <span>2020-04-03 25:45</span>
-                        <h1>dgfddsfsdfsdfsdfsdgdfg</h1>
+                        <h1>title</h1>
                         <p>
-                            fdfsgdf
+                            content
                         </p>
                     </div>
                     <hr />

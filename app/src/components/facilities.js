@@ -86,6 +86,7 @@ export default class Facilities extends React.Component{
                     height: this.state.window.innerHeight-70+"px"}}>
 
                     <CreateScreen 
+                        props={this.state}
                         getScreen={this.state.actualScreen } 
                         changeScreen={this.changeScreen.bind(this)}  
                     />

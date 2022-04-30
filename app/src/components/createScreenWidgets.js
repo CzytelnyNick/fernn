@@ -92,10 +92,10 @@ export default class CreateScreen extends React.Component{
                 break;
                 
             case 'other/message':
-                return <Messsage widget={widget} changeScreen={this.props.changeScreen} />
+                return <Messsage widget={widget} changeScreen={this.props.changeScreen} props={this.props} />
                 
             case 'other/messages':
-                return <Messsages widget={widget} changeScreen={this.props.changeScreen} />
+                return <Messsages widget={widget} changeScreen={this.props.changeScreen} props={this.props} />
 
             default:
                 return (<div>gtrtyrty</div>)
