@@ -9,6 +9,9 @@ export class Notyfication{
     public type	: number
 
     @Column()
+    public recipient: number
+
+    @Column()
     public title: string
 
     @Column()

@@ -8,9 +8,9 @@ export default function Messsages(props){
     const [lastMessages, setLastMessages] = useState([])
 
     useEffect(() => {
-        // axios.get(`${process.env.REACT_APP_FERNN_API_HOST}/v1/messages/`, { headers: {}, params: {props.props} })
-        //     .then((res) => { return res.data })
-        //     .finally((data) => {setLastMessages(data)})
+        // axios.get(`${process.env.REACT_APP_FERNN_API_HOST}/v1/messages/messages`, { headers: {}, params: {props.props} })
+        //      .then((res) => { return res.data })
+        //      .finally((data) => {setLastMessages(data)})
     })
 
     return (

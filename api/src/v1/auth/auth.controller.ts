@@ -12,7 +12,7 @@ export class AuthController {
         return JSON.stringify(await this.authService.verifyApi(apiKey))
     }
 
-    @Post('create/session')
+    @Post('session')
     async createSession( @Param() param: string, @Query() query: string, @Headers() headers: string ){
         return await this.authService.checkAPI(
             this.authService.createSession, 
