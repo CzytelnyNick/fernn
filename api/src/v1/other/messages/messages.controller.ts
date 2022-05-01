@@ -7,8 +7,17 @@ export class MessagesController {
     constructor(private readonly messagesService: MessagesService){}
    
     @Get('')
-    async all(@Param() param: JSON, @Query() query: JSON, @Headers() headers: JSON){
+    async getAll(@Param() param: JSON, @Query() query: JSON, @Headers() headers: JSON){
         const arg: argument = { param: param, query: query, headers: headers }
-        return await this.messagesService.getAll(arg)
+        if(arg.query.ID!==undefined)
+            return await this.messagesService.getOne(arg)
+        else
+            return await this.messagesService.getAll(arg)
+    }
+
+    @Get('/:count')
+    async getLast(@Param() param: JSON, @Query() query: JSON, @Headers() headers: JSON){
+        const arg: argument = { param: param, query: query, headers: headers }
+        return await this.messagesService.getLast(arg)
     }
 }

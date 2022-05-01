@@ -8,7 +8,7 @@ export interface argument {
 export interface response {
     date: Date,
     result: boolean,
-    response: Array<Notyfication>,
+    response: any,
     sessionInfo: any,
     error: object
 }
