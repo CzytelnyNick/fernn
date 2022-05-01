@@ -1,0 +1,12 @@
+[
+    {
+      "key": "ctrl+b",
+      "command": "workbench.action.terminal.sendSequence",
+      "args": { "text": "\u001bb" }
+    },
+    {
+      "key": "ctrl+right",
+      "command": "workbench.action.terminal.sendSequence",
+      "args": { "text": "\u001bf" }
+    }
+  ]

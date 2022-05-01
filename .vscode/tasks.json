@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run nest api",
+        "type": "shell",
+        "command": "cd ./api | npm run start:dev",
+        "windows": {
+          "command": "cd ./api | npm run start:dev"
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
+      },
+      {
+        "label": "Run react app",
+        "type": "shell",
+        "command": "cd ./app | npm start",
+        "windows": {
+          "command": "cd ./app | npm start"
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
+      }
+    ]
+}
